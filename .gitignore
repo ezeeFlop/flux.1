@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+stable-diffusion.cpp/*
+models/*
+flux.1/*
+*.png
 # C extensions
 *.so
 
