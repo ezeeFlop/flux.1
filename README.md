@@ -26,10 +26,13 @@ I gives a way to use Flux.1 models without comfyui in a simple way.
 	git clone --recursive https://github.com/leejet/stable-diffusion.cpp
 	cd stable-diffusion.cpp
 	mkdir build
+    cd build
 	cmake .. -DSD_METAL=ON
 	cmake --build . --config Release
 
 # Download models & lora
+
+    Use the load_models.sh script to download the models and lora, or download them manually with the huggingface-cli herebelow.
 
     ## Flux.1 Dev & Schnell GGUF
 	cd ../../models
@@ -52,9 +55,10 @@ I gives a way to use Flux.1 models without comfyui in a simple way.
 	huggingface-cli download --local-dir ./ XLabs-AI/flux-lora-collection disney_lora_comfy_converted.safetensors
 	huggingface-cli download --local-dir ./ XLabs-AI/flux-lora-collection mjv6_lora_comfy_converted.safetensors
 	huggingface-cli download --local-dir ./ XLabs-AI/flux-lora-collection realism_lora_comfy_converted.safetensors
-	huggingface-cli download --local-dir ./ XLabs-AI/flux-lora-collection scenery_lora_comfy_converted.safetensors@
+	huggingface-cli download --local-dir ./ XLabs-AI/flux-lora-collection scenery_lora_comfy_converted.safetensors
 
 # Create a virtual environment and install dependencies
+    cd ..
 	python3 -m venv flux.1    
 	source ./flux.1/bin/activate
 	pip install panel param

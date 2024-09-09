@@ -85,7 +85,7 @@ class StableDiffusionApp(param.Parameterized):
         """Run the stable-diffusion.cpp command and update the output image."""
         cmd = self.generate_command()
         self.command_output = ""
-        
+        print(cmd)
         # Disable button and start spinner
         self.generate_button.disabled = True
         self.loading_spinner.value = True
@@ -151,7 +151,7 @@ class StableDiffusionApp(param.Parameterized):
                 ),
                 pn.Column(
                     pn.pane.Markdown("## Command Output"),
-                    pn.widgets.TextAreaInput(value=self.param.command_output, disabled=True, height=100, max_length=10000),
+                    pn.widgets.TextAreaInput(value=self.param.command_output, disabled=True, height=100, width=400, max_length=10000),
                 )
             )   
         )
